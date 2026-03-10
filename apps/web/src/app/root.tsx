@@ -31,7 +31,7 @@ import { toPng } from 'html-to-image';
 import { useNavigate } from 'react-router';
 import { serializeError } from 'serialize-error';
 import { Toaster, toast } from 'sonner';
-import { useDevServerHeartbeat } from '../__create/useDevServerHeartbeat';
+/*import { useDevServerHeartbeat } from '../__create/useDevServerHeartbeat';*/
 import type { Route } from './+types/root';
 
 export const links = () => [];
@@ -401,7 +401,7 @@ export const useHandleScreenshotRequest = () => {
 export function Layout({ children }: { children: ReactNode }) {
   useHandshakeParent();
   useHandleScreenshotRequest();
-  useDevServerHeartbeat();
+  /*useDevServerHeartbeat();*/
   const navigate = useNavigate();
   const location = useLocation();
   const pathname = location?.pathname;
