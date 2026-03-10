@@ -250,7 +250,14 @@ app.use('/api/auth/*', async (c, next) => {
 });
 app.route(API_BASENAME, api);
 
-export default await createHonoServer({
-  app,
-  defaultLogger: false,
-});
+export const vercelApp = app; // Export the raw app so Vercel can use it
+
+// Only launch the Node HTTP server locally
+const server = process.env.VERCEL 
+  ? null 
+  : await createHonoServer({
+      app,
+      defaultLogger: false,
+    });
+
+export default server;
