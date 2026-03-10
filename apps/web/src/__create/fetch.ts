@@ -1,3 +1,5 @@
+// @ts-nocheck
+import nodeConsole from 'node:console';
 const originalFetch = fetch;
 const isBackend = () => typeof window === 'undefined';
 
