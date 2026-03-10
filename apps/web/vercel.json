@@ -1,11 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/api/:match*",
+      "source": "/api/(.*)",
       "destination": "/api"
     },
     {
-      "source": "/integrations/:match*",
+      "source": "/integrations/(.*)",
       "destination": "/api"
     }
   ]
